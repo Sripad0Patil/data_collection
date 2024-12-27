@@ -25,9 +25,8 @@ var DataShcema = new mongoose.Schema({
 var Data = mongoose.model('Data', DataShcema);
 
 // EXPRESS SPECIFIC STUFF
-app.use('/static', express.static('static')); // Serve static files (CSS, JS, images, etc.)
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded data
-
+app.use(express.static('public'));
 // SERVING HTML FILES
 // app.get('/', (req, res) => {
 //     // Serve the HTML file directly
