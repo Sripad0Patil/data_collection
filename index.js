@@ -3,7 +3,7 @@ const path = require("path");
 // const fs = require("fs");
 const app = express();
 var mongoose = require("mongoose");
-const bodyparser = require("body-parser");
+const bodyParser = require("body-parser");
 const dotenv = require("dotenv")
 
 dotenv.config()
@@ -27,6 +27,11 @@ var Data = mongoose.model('Data', DataShcema);
 // EXPRESS SPECIFIC STUFF
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded data
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({
+    extended: true
+  }));
+app.use(bodyParser.json());
+
 // SERVING HTML FILES
 // app.get('/', (req, res) => {
 //     // Serve the HTML file directly
@@ -45,6 +50,7 @@ app.get('/',(req, res) =>{
 
 app.post('/index',(req, res) => {
     var myData = new Data(req.body);
+
     myData.save().then(()=>{
         res.send("This data has been saved to database.")
     }).catch(()=>{
