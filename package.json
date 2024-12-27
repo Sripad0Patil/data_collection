@@ -1,0 +1,23 @@
+{
+  "name": "appu",
+  "version": "1.0.0",
+  "description": "This is a package to explore node and express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "author": "sripad",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "html": "^1.0.0",
+    "mongodb": "^6.11.0",
+    "mongoose": "^8.8.4",
+    "nodemon": "^3.1.7",
+    "pug": "^3.0.3"
+  }
+}

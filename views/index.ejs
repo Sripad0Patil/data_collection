@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/sty.css">
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img id="l" src="/static/images.png" alt="">
+            </div>
+            <div class="navbarOptions">
+                <li><a href="/">Home</a></li>
+                <li><a href="/">About us</a></li>
+                <li><a href="/">Moves</a></li>
+                <li><a href="/">Contact</a></li>
+
+                <div class="tog" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars fa-xl"></i>
+                </div>
+                <div class="slide" id="slideMenu">
+                    <li class="h"><i class="fas fa-tv"></i> dashboard</li>
+                    <li class="h"><i class="far fa-user"></i> profile</li>
+                    <li class="h"><i class="fab fa-gripfire"></i> trending</li>
+                    <li class="h"><i class="fas fa-cogs"></i> setting</li>
+                </div>
+
+            </div>
+        </ul>
+    </nav>
+    <div class="cont">
+        <h1>Get check your moves by professionals</h1>
+        <form action="/index" method="post" id="contact">
+            <input type="text" name="name" id="name" placeholder="Enter your name">
+            <input type="text" name="age" id="age" placeholder="Enter your age">
+            <input type="text" name="gender" id="gender" placeholder="male/female/others">
+            <textarea name="address" id="address" cols="30" rows="10" placeholder="Enter your address"></textarea>
+            <textarea name="more" id="more" cols="30" rows="15" placeholder="More about you..."></textarea>
+            <button class="btn" id="b">Submit</button>
+        </form>
+    </div>
+    <div class="platforms">
+        <p>Follow us on: </p>
+        <a href="https://x.com/jabbawockeez"><img src="/static/x.png" alt=""></a>
+        <a href="https://www.instagram.com/jabbawockeez/?hl=en"><img src="/static/insta.png" alt=""></a>
+        <a href="https://www.facebook.com/Jabbawockeez/"><img src="/static/face.png" alt=""></a>
+        <a href="https://www.youtube.com/@jabbawockeez"><img src="/static/yt.png" alt=""></a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slideMenu = document.querySelector('.slide');
+            const toggleButton = document.querySelector('.tog');
+
+            toggleButton.addEventListener('click', () => {
+                if (slideMenu.style.right === '0px') {
+                    slideMenu.style.right = '-200px'; // Hide the menu
+                    toggleButton.style.display = 'flex'; // Show the toggle button
+                } else {
+                    slideMenu.style.right = '0px'; // Show the menu
+                    toggleButton.style.display = 'none'; // Hide the toggle button
+                }
+            });
+
+            slideMenu.addEventListener('mouseleave', () => {
+                slideMenu.style.right = '-200px'; // Hide the menu
+                toggleButton.style.display = 'flex'; // Show the toggle button
+            });
+        });
+
+    </script>
+</body>
+
+</html>
